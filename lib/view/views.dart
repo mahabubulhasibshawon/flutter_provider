@@ -1,2 +1,3 @@
 export 'count_example.dart';
 export 'slider_example.dart';
+export 'favourite_view.dart';

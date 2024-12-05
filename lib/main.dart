@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider/provider/count_provider.dart';
+import 'package:flutter_provider/provider/favourite_provider.dart';
 import 'package:flutter_provider/provider/slider_provider.dart';
 import 'package:provider/provider.dart';
-
 import 'view/views.dart';
 
 void main() {
@@ -17,12 +17,13 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => CountProvider()),
-        ChangeNotifierProvider(create: (_) => SliderProvider())
+        ChangeNotifierProvider(create: (_) => SliderProvider()),
+        ChangeNotifierProvider(create: (_)=> FavouriteItemProvider())
       ],
       child: MaterialApp(
         theme: ThemeData(useMaterial3: true),
         debugShowCheckedModeBanner: false,
-        home: SliderExample(),
+        home: FavouriteView(),
       ),
     );
   }
