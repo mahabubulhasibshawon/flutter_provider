@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider/provider/favourite_provider.dart';
+import 'package:flutter_provider/view/my_favourite_view.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteView extends StatelessWidget {
@@ -12,6 +13,17 @@ class FavouriteView extends StatelessWidget {
     print('build');
     // final favouriteProvider = Provider.of<FavouriteItemProvider>(context, listen: false);
     return Scaffold(
+      appBar: AppBar(
+        title: Text('favourite app'),
+        actions: [
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MyFavouriteView()));
+            },
+            child: Icon(Icons.favorite),
+          )
+        ],
+      ),
       body: Column(
         children: [
           Expanded(
