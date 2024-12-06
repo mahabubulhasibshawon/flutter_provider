@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(useMaterial3: true, appBarTheme: AppBarTheme(backgroundColor: Colors.teal, foregroundColor: Colors.white)),
         darkTheme: ThemeData(brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
-        home: FavouriteView(),
+        home: ValueNotifierApp(),
       ),
     );
   }
