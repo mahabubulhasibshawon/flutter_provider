@@ -9,13 +9,13 @@ class AuthProvider with ChangeNotifier {
     _loading = value;
     notifyListeners();
   }
-  void login(String email, String passwrd) async {
+  void login(String email, String password) async {
     setLoading(true);
     try {
       Response response = await post(Uri.parse('https://reqres.in/api/login'),
       body: {
         'email' : email,
-        'passwrd' : passwrd
+        'password' : password
       }
       );
       if(response.statusCode == 200) {

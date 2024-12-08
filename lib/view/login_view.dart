@@ -23,9 +23,7 @@ class LoginView extends StatelessWidget {
           children: [
             TextFormField(
               controller: emailController,
-              decoration: InputDecoration(
-                hintText: 'Email'
-              ),
+              decoration: InputDecoration(hintText: 'Email'),
             ),
             TextFormField(
               controller: passwordController,
@@ -34,20 +32,30 @@ class LoginView extends StatelessWidget {
               ),
               obscureText: true,
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             InkWell(
-              onTap: (){
-                authProvider.login(emailController.text.toString(), passwordController.text.toString());
+              onTap: () {
+                authProvider.login(emailController.text.toString(),
+                    passwordController.text.toString());
                 print('clicked');
               },
               child: Container(
                 height: 40,
                 width: 300,
                 decoration: BoxDecoration(
-                  color: Colors.teal,
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                child: Center(child: authProvider.loading ? CircularProgressIndicator() : Text('Log in', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Center(
+                    child: authProvider.loading
+                        ? CircularProgressIndicator()
+                        : Text(
+                            'Log in',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          )),
               ),
             )
           ],
